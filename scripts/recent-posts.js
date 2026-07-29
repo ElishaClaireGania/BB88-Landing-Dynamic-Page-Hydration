@@ -1,4 +1,28 @@
-document.addEventListener("DOMContentLoaded", async () => {
+const recentPostsData = [
+  {
+    image: "./assets/picture/picture1.png",
+    category: "Politics",
+    title: "E-Commerce's Impact on Marketing:",
+    description: "Harnessing Online Channels to Boost Sales and Reach New Customers",
+    link: "#"
+  },
+  {
+    image: "./assets/picture/picture2.png",
+    category: "Sports",
+    title: "The Rise of Mobile Marketing:",
+    description: "Creating Mobile-Optimized Campaigns to Reach Customers on-the-go",
+    link: "#"
+  },
+  {
+    image: "./assets/picture/picture3.png",
+    category: "Entertainment",
+    title: "The Rise of Mobile Marketing:",
+    description: "Creating Mobile-Optimized Campaigns to Reach Customers on-the-go",
+    link: "#"
+  }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
   const postsContainer = document.querySelector(".posts-grid");
 
   if (!postsContainer) {
@@ -43,18 +67,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  // Dynamic Fetching from JSON File
-  try {
-    const response = await fetch("./recent-posts.json");
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const recentPostsData = await response.json();
-    
-    // Initial Render
-    renderPosts(recentPostsData);
-  } catch (error) {
-    console.error("Error loading recent posts JSON:", error);
-    postsContainer.innerHTML = `<p class="error-msg">Failed to load posts.</p>`;
-  }
+  renderPosts(recentPostsData);
 });
