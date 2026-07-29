@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BB88 LANDING PAGE</title>
+
+    <!-- SCRIPTS -->
+    <script src="./scripts/nav-active.js" defer></script>
+    <script src="./scripts/animations.js" defer></script>
+    <script src="./scripts/portfolio.js" defer></script>
+    <script src="./scripts/team.js" defer></script>
+    <script src="./scripts/app.js" defer></script>
+    <script src="./scripts/hamburg.js" defer></script>
+
+    <!-- STYLESHEETS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/picture/logo1.png" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+  <body>
+    <div id="hero-wrapper" class="relative overflow-hidden w-full">
+      <div class="hero-bg absolute inset-0 z-0">
+        <img
+          src="assets/bg/background 1.png"
+          alt=""
+          class="hero-bg-image w-full h-full object-cover"
+        />
+        <img
+          src="assets/bg/vector1.png"
+          alt=""
+          class="hero-vector-overlay absolute bottom-0 right-0 pointer-events-none z-2"
+        />
+      </div>
+
+      <!-- HEADER SECTION -->
+      <header class="relative z-10">
+        <nav class="nav-links relative">
+          <div class="main-logo md:w-auto flex justify-center md:justify-start">
+            <img
+              src="assets/logo/logo bb88.png"
+              alt="BB88 Logo"
+              id="main-logo"
+            />
+          </div>
+
+          <!-- Hamburger Menu - positioned to the right -->
+          <button
+            class="hamburger-menu md:hidden"
+            id="hamburger-btn"
+            aria-label="Toggle menu"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+
+          <!-- Navigation Links -->
+          <div class="nav-menu md:flex" id="nav-menu">
+            <a href="#hero" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- HERO SECTION -->
+      <section
+        class="hero relative z-10 flex flex-col justify-center items-center"
+        id="hero"
+      >
+        <div class="hero-contents text-center">
+          <h1>WELCOME TO BB88</h1>
+          <p>Quickly start your project now and set the stage for success</p>
+          <div class="btn-group flex justify-center gap-4">
+            <a href="" class="btn btn-primary">Get Started</a>
+            <a href="" class="btn btn-secondary">Watch Video</a>
+          </div>
+        </div>
+        <div
+          class="section-divider absolute w-full h-7.5 bg-[#48887b] z-20 left-0 bottom-0"
+        ></div>
+      </section>
+    </div>
+
+    <!-- ABOUT SECTION - Claire -->
+    <section
+      class="about relative z-10 w-full flex flex-col items-center"
+      id="about"
+    >
+      <div class="about-bg absolute inset-0 z-0">
+        <img
+          src="assets/bg/background 1.png"
+          alt=""
+          class="about-bg-image w-full h-full object-cover z-1"
+        />
+        <img
+          src="assets/bg/vector1.png"
+          alt=""
+          class="about-vector-overlay absolute right-0 pointer-events-none z-2"
+        />
+      </div>
+      <div class="about-wrapper relative z-10 w-full max-w-300">
+        <div class="design-marketing flex flex-col items-center text-center">
+          <h2>Design and Marketing Solutions</h2>
+          <div class="divider z-10"></div>
+
+          <div class="about-icons flex flex-wrap justify-center gap-8 mt-1">
+            <div class="icon-container flex flex-col items-center">
+              <div class="icon-wrapper">
+                <img
+                  src="assets/icon/icon design ideas.png"
+                  alt="Design Ideas"
+                />
+              </div>
+              <span class="icon-label">Design Ideas</span>
+            </div>
+
+            <div class="icon-container flex flex-col items-center">
+              <div class="icon-wrapper">
+                <img
+                  src="assets/icon/icon Digital & Mainstream.png"
+                  alt="Digital & Mainstream"
+                />
+              </div>
+              <span class="icon-label">Digital & Mainstream Marketing</span>
+            </div>
+
+            <div class="icon-container flex flex-col items-center">
+              <div class="icon-wrapper">
+                <img
+                  src="assets/icon/icon Brand & Identity.png"
+                  alt="Brand & Identity"
+                />
+              </div>
+              <span class="icon-label">Brand & Identity</span>
+            </div>
+
+            <div class="icon-container flex flex-col items-center">
+              <div class="icon-wrapper">
+                <img
+                  src="assets/icon/icon Digital Solutions.png"
+                  alt="Digital Solutions"
+                />
+              </div>
+              <span class="icon-label">Digital Solutions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-contents flex flex-col items-center">
+          <h2>About Us</h2>
+          <div class="divider z-10"></div>
+          <h3>Creative Solutions for Impactful Brand Communication</h3>
+          <p>
+            BB 88 Advertising & Digital Solutions Inc. is a "One-Stop" shop for
+            design and communication strategy, specializing in graphic design,
+            architectural design, realistic visual production, web app and
+            mobile application. Our focus is on creating the best design to
+            effectively sell your products and services through high impact
+            visual mediums. We can help turn your ideas and creative perspective
+            into a successful communication strategy.
+          </p>
+          <p>
+            Our philosophy is based on our passion to deliver the RIGHT message
+            at the RIGHT time with the RIGHT solution. With a combined team of
+            dedicated professionals from varied creative industries & powered by
+            "State of the Art" equipment, we do our work best with the clients
+            to integrate branding and marketing strategy. BB 88 support team
+            innovates unique identity of products and services that would enable
+            our customers to establish presence in their target market.
+          </p>
+          <p>
+            At BB 88 Advertising & Digital Solutions Inc., we believe that our
+            ability to focus on our customers needs and target audience sets us
+            apart in the industry. Our distinctive design concepts and
+            production approach, combined with expert technical support, allow
+            us to cover all aspects of mass communication, including print video
+            radio, and the internet. Our group of companies are ready to provide
+            you with the support you need to succeed in today's rapidly-evolving
+            landscape.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION - Kim -->
+    <div id="services" class="bg-services relative w-full overflow-hidden">
+      <img
+        src="assets/vector/vector2.png"
+        alt=""
+        class="service-decor top-left"
+      />
+
+      <img
+        src="assets/vector/vector2.0.png"
+        alt=""
+        class="service-decor top-right"
+      />
+
+      <img
+        src="assets/vector/vector2.1.png"
+        alt=""
+        class="service-decor bottom-left"
+      />
+
+      <img
+        src="assets/vector/vector2.2.png"
+        alt=""
+        class="service-decor bottom-right"
+      />
+
+      <section class="services">
+        <div class="services-header">
+          <h2>Our Services</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="card-container">
+          <div class="left-card">
+            <img
+              src="/assets/vector/Digital Marketing Management vector.png"
+              alt="Digital Marketing Management"
+            />
+          </div>
+
+          <div class="middle-card">
+            <div class="middle-card-title-box">
+              <h3>
+                Media Production
+                <br />
+                Management
+              </h3>
+            </div>
+
+            <div class="middle-card-body">
+              <p>
+                We have a team of in-house graphic designers, animators,
+                architectural designers, engineers and copywriters.
+              </p>
+
+              <p>
+                We also work with trusted contractors and outside firms. We
+                provide creative input such as concept visualization up to final
+                output. We define an engaging visual aspects of websites, books,
+                magazines, product packaging, exhibitions, visual production
+                designs and more.
+              </p>
+            </div>
+          </div>
+
+          <div class="right-card">
+            <img
+              src="/assets/vector/System Solutions & Management vector.png"
+              alt="System Solutions & Management"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="relative w-full h-2 bg-[#48887b] z-20"></div>
+
+    <div class="icons-carousel-container">
+      <div class="carousel-wrapper">
+        <div class="carousel-track gap-8" id="carousel-track">
+          <div class="carousel-item w-25 h-full">
+            <img
+              src="assets/logo/logo1.png"
+              alt="Logo 1"
+              class="max-h-25 max-w-25"
+            />
+          </div>
+          <div class="carousel-item w-25 h-full">
+            <img
+              src="assets/logo/logo2.png"
+              alt="Logo 2"
+              class="max-h-25 max-w-25"
+            />
+          </div>
+          <div class="carousel-item w-25 h-full">
+            <img
+              src="assets/logo/logo3.png"
+              alt="Logo 3"
+              class="max-h-25 max-w-25"
+            />
+          </div>
+          <div class="carousel-item w-25 h-full">
+            <img
+              src="assets/logo/logo 4.png"
+              alt="Logo 4"
+              class="max-h-25 max-w-25"
+            />
+          </div>
+          <div class="carousel-item w-25 h-full">
+            <img
+              src="assets/logo/logo 5.png"
+              alt="Logo 5"
+              class="max-h-25 max-w-25"
+            />
+          </div>
+          <div class="carousel-item w-25 h-full">
+            <img
+              src="assets/logo/logo 6.png"
+              alt="Logo 6"
+              class="max-h-25 max-w-25"
+            />
+          </div>
+          <div class="carousel-item w-25 h-full">
+            <img
+              src="assets/logo/logo 7.png"
+              alt="Logo 7"
+              class="max-h-25 max-w-25"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="carousel-dots flex justify-center items-center space-x-2 mt-5"
+      ></div>
+    </div>
+    <div class="relative w-full h-2 bg-[#48887b] z-20"></div>
+
+    <!-- PORTFOLIO SECTION - Claire -->
+    <div
+      class="img-container relative w-full h-full min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center m-0 p-0"
+      id="bg-portfolio"
+    >
+      <section class="portfolio" id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="divider z-10"></div>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="Brand & Design">
+            Brand Design
+          </button>
+          <button class="filter-btn" data-filter="Mobile App">
+            Mobile App
+          </button>
+          <button class="filter-btn" data-filter="Soc Med">Soc Med</button>
+          <button class="filter-btn" data-filter="Multimedia">
+            Multimedia
+          </button>
+          <button class="filter-btn" data-filter="Print Media">
+            Print Media
+          </button>
+          <button class="filter-btn" data-filter="Web App">Web App</button>
+        </div>
+
+        <div class="portfolio-projects" id="projects-grid"></div>
+
+        <div class="see-more-container">
+          <a href="#" class="see-more-btn"><button>SEE MORE</button></a>
+        </div>
+        <div
+          class="section-divider absolute w-full h-7.5 bg-[#48887b] z-20 left-0 bottom-0"
+        ></div>
+      </section>
+    </div>
+
+    <!-- TEAM SECTION - Kim -->
+    <section class="team relative overflow-hidden w-full" id="team">
+      <img src="/assets/vector/vector3.png" alt="" class="team-clouds" />
+
+      <div class="team-container">
+        <div class="team-header">
+          <h2>Our Team</h2>
+          <div class="divider z-10"></div>
+        </div>
+
+        <div class="team-row">
+          <button class="team-card" id="btn-software" data-role="software">
+            <div class="card-body">
+              <div class="active-circle">
+                <img
+                  src="/assets/icon/ourteam(icon1).png"
+                  alt="Software Engineers"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+
+            <div class="card-band">Software Engineers</div>
+          </button>
+
+          <button class="team-card" id="btn-web" data-role="web">
+            <div class="card-body">
+              <div class="active-circle">
+                <img
+                  src="/assets/icon/ourteam(icon2).png"
+                  alt="Web Developers"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+
+            <div class="card-band">Web Developers</div>
+          </button>
+
+          <button class="team-card" id="btn-app" data-role="app">
+            <div class="card-body">
+              <div class="active-circle">
+                <img
+                  src="/assets/icon/ourteam(icon3).png"
+                  alt="App Developers"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+
+            <div class="card-band">App Developers</div>
+          </button>
+
+          <button class="team-card" id="btn-graphic" data-role="graphic">
+            <div class="card-body">
+              <div class="active-circle">
+                <img
+                  src="/assets/icon/ourteam(icon4).png"
+                  alt="Graphic Artists"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+
+            <div class="card-band">Graphic Artists</div>
+          </button>
+        </div>
+
+        <div class="team-row team-bottom">
+          <button
+            class="team-card active-card"
+            id="btn-multimedia"
+            data-role="multimedia"
+          >
+            <div class="card-body">
+              <div class="active-circle">
+                <img
+                  src="/assets/icon/ourteam(icon7).png"
+                  alt="Multimedia Artists"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+
+            <div class="card-band">Multimedia Artists</div>
+          </button>
+
+          <button class="team-card" id="btn-writers" data-role="writers">
+            <div class="card-body">
+              <div class="active-circle">
+                <img
+                  src="/assets/icon/ourteam(icon5).png"
+                  alt="Creative Writers"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+
+            <div class="card-band">Creative Writers</div>
+          </button>
+
+          <button class="team-card" id="btn-director" data-role="director">
+            <div class="card-body">
+              <div class="active-circle">
+                <img
+                  src="/assets/icon/ourteam(icon6).png"
+                  alt="Creative Director"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+
+            <div class="card-band">Creative Director</div>
+          </button>
+        </div>
+
+        <div class="speech-wrapper">
+          <div class="team-speech-bubble" id="team-speech-bubble">
+            <div id="bubble-arrow" class="bubble-arrow"></div>
+
+            <h3 id="role-title" class="role-title">Multimedia Artists</h3>
+
+            <p id="role-desc" class="role-desc">
+              Multimedia Artists are similar to Graphic Artists, but they
+              specialize in creating dynamic and interactive content like
+              videos, 3D animations, and virtual reality experiences. They use a
+              variety of software tools to create engaging and immersive
+              experiences for users.
+            </p>
+          </div>
+        </div>
+
+        <div class="team-illustration-wrapper">
+          <img
+            src="/assets/vector/vector4.png"
+            class="team-people-vector"
+            alt="Our Team"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT POSTS SECTION - Shane -->
+    <section
+      class="recent-posts relative w-full overflow-hidden"
+      id="recent-posts"
+    >
+      <img
+        src="/assets/vector/vector2.png"
+        alt=""
+        class="posts-vector top-left"
+      />
+      <img
+        src="/assets/vector/vector2.0.png"
+        alt=""
+        class="posts-vector top-right"
+      />
+
+      <div class="recent-posts-header">
+        <h2>Recent Posts</h2>
+        <div class="divider z-10"></div>
+      </div>
+
+      <div class="posts-container">
+        <div class="posts-grid">
+          <article class="post-card">
+            <div class="card-inner">
+              <div class="post-image-wrapper">
+                <img
+                  src="/assets/picture/picture1.png"
+                  alt="E-Commerce's Impact on Marketing"
+                />
+              </div>
+              <div class="post-content">
+                <span class="post-category">Politics</span>
+                <div class="post-title-box">
+                  <h3>E-Commerce's Impact on Marketing:</h3>
+                </div>
+                <p class="post-description">
+                  Harnessing Online Channels to Boost Sales and Reach New
+                  Customers
+                </p>
+                <a href="#" class="btn-read-more"
+                  >Read More <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="card-inner">
+              <div class="post-image-wrapper">
+                <img
+                  src="/assets/picture/picture2.png"
+                  alt="The Rise of Mobile Marketing"
+                />
+              </div>
+              <div class="post-content">
+                <span class="post-category">Sports</span>
+                <div class="post-title-box">
+                  <h3>The Rise of Mobile Marketing:</h3>
+                </div>
+                <p class="post-description">
+                  Creating Mobile-Optimized Campaigns to Reach Customers
+                  on-the-go
+                </p>
+                <a href="#" class="btn-read-more"
+                  >Read More <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="card-inner">
+              <div class="post-image-wrapper">
+                <img
+                  src="/assets/picture/picture3.png"
+                  alt="The Rise of Mobile Marketing"
+                />
+              </div>
+              <div class="post-content">
+                <span class="post-category">Entertainment</span>
+                <div class="post-title-box">
+                  <h3>The Rise of Mobile Marketing:</h3>
+                </div>
+                <p class="post-description">
+                  Creating Mobile-Optimized Campaigns to Reach Customers
+                  on-the-go
+                </p>
+                <a href="#" class="btn-read-more"
+                  >Read More <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION - Shane -->
+    <section class="contact relative w-full z-10" id="contact">
+      <img src="/assets/bg/vector5.png" alt="" class="vector-decor top-left" />
+
+      <img
+        src="/assets/bg/vector 5.0.png"
+        alt=""
+        class="vector-decor bottom-right"
+      />
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2 class="contact-title">Contact</h2>
+          <div class="divider z-10"></div>
+          <p class="contact-subtitle">
+            For immediate assistance, contact us 9:00 AM - 6:00 PM<br />
+            to address any emergency needs.
+          </p>
+        </div>
+
+        <div class="map-frame-wrapper w-full h-95 bg-white">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3851.4443901614945!2d120.588888!3d15.133333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f24df45214ab%3A0x6bd6c7e2b1090be4!2sPlaza%20Victoria%2C%20Angeles%2C%20Pampanga!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="contact-grid">
+          <div class="info-pills-col">
+            <!-- Phone Card -->
+            <div class="info-capsule-row">
+              <div class="capsule-icon-badge">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="capsule-body-pill">
+                <div class="capsule-inner-card">
+                  <span class="capsule-label">Phone:</span>
+                  <span class="capsule-value">+63 45 963 2025</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="info-capsule-row">
+              <div class="capsule-icon-badge">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="capsule-body-pill">
+                <div class="capsule-inner-card">
+                  <span class="capsule-label">Email:</span>
+                  <span class="capsule-value">info@bb88advertising.com</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Open Hours Card -->
+            <div class="info-capsule-row">
+              <div class="capsule-icon-badge">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="capsule-body-pill">
+                <div class="capsule-inner-card">
+                  <span class="capsule-label">Open Hours:</span>
+                  <span class="capsule-value">Mon-Sat: 9:00 AM - 6:00 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="info-capsule-row">
+              <div class="capsule-icon-badge">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="capsule-body-pill">
+                <div class="capsule-inner-card">
+                  <span class="capsule-label">Location:</span>
+                  <span class="capsule-value desc-text">
+                    Unit D, 2nd Floor Plaza Victoria Bldg., Sto. Rosario St.,<br />Sto.
+                    Domingo, Angeles City 2009 Philippines
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="form-col">
+            <form id="contact-form" onsubmit="event.preventDefault()">
+              <div class="form-row-half">
+                <input type="text" placeholder="Your name" required />
+                <input type="email" placeholder="Your email" required />
+              </div>
+              <input
+                type="text"
+                placeholder="Subject"
+                required
+                class="full-width-input"
+              />
+              <textarea placeholder="Message" rows="6" required></textarea>
+            </form>
+          </div>
+        </div>
+
+        <!-- Align Bottom Action Footer -->
+        <div class="contact-bottom-bar">
+          <div class="contact-logo-text">
+            <h3>BB 88 ADVERTISING</h3>
+            <p>AND DIGITAL SOLUTIONS INC.</p>
+          </div>
+          <button type="submit" form="contact-form" class="btn-send-message">
+            Send Message
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION - Shane -->
+    <footer class="w-full relative z-10">
+      <div
+        class="footer-social-section w-full flex flex-col items-center justify-center"
+      >
+        <p class="footer-title">Follow us on</p>
+
+        <div class="flex items-center gap-4">
+          <a href="#" class="social-icon-btn flex items-center justify-center">
+            <span class="icon-inner-circle flex items-center justify-center">
+              <i class="fa-brands fa-facebook-f text-xs"></i>
+            </span>
+          </a>
+          <a href="#" class="social-icon-btn flex items-center justify-center">
+            <span class="icon-inner-circle flex items-center justify-center">
+              <i class="fa-brands fa-instagram text-xs"></i>
+            </span>
+          </a>
+          <a href="#" class="social-icon-btn flex items-center justify-center">
+            <span class="icon-inner-circle flex items-center justify-center">
+              <i class="fa-brands fa-x text-xs"></i>
+            </span>
+          </a>
+          <a href="#" class="social-icon-btn flex items-center justify-center">
+            <span class="icon-inner-circle flex items-center justify-center">
+              <i class="fa-brands fa-linkedin-in text-xs"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-copyright-section w-full px-6 text-center">
+        <p>
+          ©2026 BB 88 Advertising & Digital Solutions Inc., All Rights Reserved.
+          &nbsp;|&nbsp; Designed & Developed by BB 88 Advertising and Digital
+          Solutions Inc.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
