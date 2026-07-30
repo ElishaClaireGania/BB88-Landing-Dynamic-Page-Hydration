@@ -1,96 +1,236 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const roleData = {
-    software: {
-      title: "Software Engineers",
-      desc: "Our Software Engineers are responsible for building robust backend infrastructures, managing reliable databases, and integrating systems to ensure seamless and high-performing web and mobile platform integrations.",
-    },
-    web: {
-      title: "Web Developers",
-      desc: "Web Developers focus on implementing responsive, cutting-edge user interfaces using frameworks like Angular and Tailwind CSS. They bring design wireframes to life with dynamic client-side interactions.",
-    },
-    app: {
-      title: "App Developers",
-      desc: "App Developers specialize in creating powerful mobile applications (such as Flutter solutions) that ensure a consistent, secure, and intuitive user experience across both iOS and Android environments.",
-    },
-    graphic: {
-      title: "Graphic Artists",
-      desc: "Graphic Artists craft unique visual identities, logo kits, and brand assets. They make sure the color palettes, shapes, and marketing graphics are highly visually appealing and convey the exact message of your business.",
-    },
-    multimedia: {
-      title: "Multimedia Artists",
-      desc: "Multimedia Artists are similar to Graphic Artists, but they specialize in creating dynamic and interactive content like videos, 3D animations, and virtual reality experiences. They use a variety of software tools to create engaging and immersive experiences for users.",
-    },
-    writers: {
-      title: "Creative Writers",
-      desc: "Our Creative Writers design engaging copies, optimize SEO descriptions, draft professional project plans, and establish high-quality communication strategies tailored directly to your target audiences.",
-    },
-    director: {
-      title: "Creative Director",
-      desc: "The Creative Director steers the overall design direction and vision of the projects, aligning team output with client goals to build a powerful and highly-marketable branding narrative.",
-    },
-  };
+const DATA_URL = "./src/data/team.json";
+
+const updateArrowPosition = (targetCard, speechBubble, arrow) => {
+  if (!speechBubble || !arrow || !targetCard) return;
+
+  requestAnimationFrame(() => {
+    const bubbleRect = speechBubble.getBoundingClientRect();
+    const cardRect = targetCard.getBoundingClientRect();
+
+    const cardCenter =
+      cardRect.left + cardRect.width / 2 - bubbleRect.left;
+
+    let percent = (cardCenter / bubbleRect.width) * 100;
+    percent = Math.max(6, Math.min(94, percent));
+
+    arrow.style.left = `${percent}%`;
+  });
+};
+
+const renderTeam = ({ title, roles, defaultRole }) => {
+
+  const firstRow = roles.filter(role => role.row === 1);
+  const secondRow = roles.filter(role => role.row === 2);
+
+  const createCards = (items) =>
+    items
+      .map(
+        ({ id, name, icon }) => `
+          <button
+            class="team-card ${id === defaultRole ? "active-card" : ""}"
+            id="btn-${id}"
+            data-role="${id}">
+
+              <div class="card-body">
+
+                  <div class="active-circle">
+
+                      <img
+                          src="${icon}"
+                          alt="${name}"
+                          class="card-icon">
+
+                  </div>
+
+              </div>
+
+              <div class="card-band">
+                  ${name}
+              </div>
+
+          </button>
+      `
+      )
+      .join("");
+
+  const activeRole =
+    roles.find(role => role.id === defaultRole) || roles[0];
+
+  return `
+      <img
+          src="/assets/vector/vector3.png"
+          alt=""
+          class="team-clouds">
+
+      <div class="team-container">
+
+          <div class="team-header">
+
+              <h2>${title}</h2>
+
+              <div class="divider z-10"></div>
+
+          </div>
+
+          <div class="team-row">
+
+              ${createCards(firstRow)}
+
+          </div>
+
+          <div class="team-row team-bottom">
+
+              ${createCards(secondRow)}
+
+          </div>
+
+          <div class="speech-wrapper">
+
+              <div
+                  class="team-speech-bubble"
+                  id="team-speech-bubble">
+
+                  <div
+                      id="bubble-arrow"
+                      class="bubble-arrow">
+                  </div>
+
+                  <h3
+                      id="role-title"
+                      class="role-title">
+
+                      ${activeRole.name}
+
+                  </h3>
+
+                  <p
+                      id="role-desc"
+                      class="role-desc">
+
+                      ${activeRole.description}
+
+                  </p>
+
+              </div>
+
+          </div>
+
+          <div class="team-illustration-wrapper">
+
+              <img
+                  src="/assets/vector/vector4.png"
+                  class="team-people-vector"
+                  alt="Our Team">
+
+          </div>
+
+      </div>
+  `;
+};
+
+export const loadTeam = async () => {
+
+  try {
+
+    const response = await fetch(DATA_URL);
+
+    if (!response.ok) {
+      throw new Error("Failed to load team.json");
+    }
+
+    const data = await response.json();
+
+    const teamSection = document.getElementById("team");
+
+    teamSection.innerHTML = renderTeam(data);
+
+    initializeTeam(data.roles);
+
+  } catch (error) {
+
+    console.error("Team Section Error:", error);
+
+  }
+
+};
+
+const initializeTeam = (roles) => {
 
   const cards = document.querySelectorAll(".team-card");
+
   const speechBubble = document.getElementById("team-speech-bubble");
   const arrow = document.getElementById("bubble-arrow");
   const roleTitle = document.getElementById("role-title");
   const roleDesc = document.getElementById("role-desc");
 
-  function updateArrowPosition(targetCard) {
-    if (!speechBubble || !arrow || !targetCard) return;
+  const roleData = {};
 
-    requestAnimationFrame(() => {
-      const bubbleRect = speechBubble.getBoundingClientRect();
-      const cardRect = targetCard.getBoundingClientRect();
-      const cardCenterInBubble =
-        cardRect.left + cardRect.width / 2 - bubbleRect.left;
+  roles.forEach(role => {
+    roleData[role.id] = role;
+  });
 
-      let percentLeft = (cardCenterInBubble / bubbleRect.width) * 100;
-      percentLeft = Math.max(6, Math.min(94, percentLeft));
-      arrow.style.left = `${percentLeft}%`;
-    });
+  const defaultCard =
+    document.querySelector(".team-card.active-card");
+
+  if (defaultCard) {
+
+    setTimeout(() => {
+      updateArrowPosition(defaultCard, speechBubble, arrow);
+    }, 300);
+
   }
 
-  if (cards.length > 0 && roleTitle && roleDesc) {
-    const defaultCard = document.getElementById("btn-multimedia");
+  window.addEventListener("load", () => {
 
-    if (defaultCard) {
-      setTimeout(() => updateArrowPosition(defaultCard), 300);
+    const active =
+      document.querySelector(".team-card.active-card");
+
+    if (active) {
+
+      updateArrowPosition(active, speechBubble, arrow);
+
     }
 
-    window.addEventListener("load", () => {
-      const activeCard =
-        document.querySelector(".team-card.active-card") || defaultCard;
-      if (activeCard) {
-        updateArrowPosition(activeCard);
-      }
+  });
+
+  cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+      const selectedRole =
+        card.dataset.role;
+
+      const role = roleData[selectedRole];
+
+      if (!role) return;
+
+      cards.forEach(c => c.classList.remove("active-card"));
+
+      card.classList.add("active-card");
+
+      roleTitle.textContent = role.name;
+
+      roleDesc.textContent = role.description;
+
+      updateArrowPosition(card, speechBubble, arrow);
+
     });
 
-    cards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const selectedRole = card.getAttribute("data-role");
-        const data = roleData[selectedRole];
+  });
 
-        if (!data) return;
+  window.addEventListener("resize", () => {
 
-        cards.forEach((c) => {
-          c.classList.remove("active-card");
-        });
+    const active =
+      document.querySelector(".team-card.active-card");
 
-        card.classList.add("active-card");
+    if (active) {
 
-        roleTitle.textContent = data.title;
-        roleDesc.textContent = data.desc;
+      updateArrowPosition(active, speechBubble, arrow);
 
-        updateArrowPosition(card);
-      });
-    });
+    }
 
-    window.addEventListener("resize", () => {
-      const activeCard = document.querySelector(".team-card.active-card");
-      if (activeCard) {
-        updateArrowPosition(activeCard);
-      }
-    });
-  }
-});
+  });
+
+};
+
+loadTeam();
