@@ -1,4 +1,9 @@
+// app.js
+import { loadContactSection } from "./src/js/sections/contact.js";
+
 document.addEventListener("DOMContentLoaded", () => {
+  loadContactSection();
+
   const track = document.getElementById("carousel-track");
   const wrapper = document.querySelector(".carousel-wrapper");
   const dotsContainer = document.querySelector(".carousel-dots");
