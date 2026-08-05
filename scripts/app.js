@@ -1,8 +1,10 @@
 // app.js
 import { loadContactSection } from "./src/js/sections/contact.js";
+import { loadRecentPosts } from "./recent-posts.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadContactSection();
+  loadRecentPosts();
 
   const track = document.getElementById("carousel-track");
   const wrapper = document.querySelector(".carousel-wrapper");
@@ -93,4 +95,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     calculateWidths();
   });
-});
+});s

@@ -1,48 +1,10 @@
-const recentPostsData = [
-  {
-    image: "./assets/picture/picture1.png",
-    category: "Politics",
-    title: "E-Commerce's Impact on Marketing:",
-    description: "Harnessing Online Channels to Boost Sales and Reach New Customers",
-    link: "#"
-  },
-  {
-    image: "./assets/picture/picture2.png",
-    category: "Sports",
-    title: "The Rise of Mobile Marketing:",
-    description: "Creating Mobile-Optimized Campaigns to Reach Customers on-the-go",
-    link: "#"
-  },
-  {
-    image: "./assets/picture/picture3.png",
-    category: "Entertainment",
-    title: "The Rise of Mobile Marketing:",
-    description: "Creating Mobile-Optimized Campaigns to Reach Customers on-the-go",
-    link: "#"
-  }
-];
+const DATA_URL = "./src/data/recent-posts.json";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const postsContainer = document.querySelector(".posts-grid");
 
-  if (!postsContainer) {
-    console.error(
-      "Error: Could not find the posts grid element (.posts-grid) in the DOM."
-    );
-    return;
-  }
-
-  // Hydrate & Render Posts Function
-  function renderPosts(posts) {
-    postsContainer.innerHTML = "";
-
-    if (!posts || posts.length === 0) {
-      postsContainer.innerHTML = `<div class="no-posts text-center py-8 text-gray-500 w-full col-span-full">No recent posts found.</div>`;
-      return;
-    }
-
-    posts.forEach((post) => {
-      const postHTML = `
+const createCards = (posts) =>
+  posts
+    .map(
+      (post) => `
         <article class="post-card">
           <div class="card-inner">
             <div class="post-image-wrapper">
@@ -61,11 +23,61 @@ document.addEventListener("DOMContentLoaded", () => {
               </a>
             </div>
           </div>
-        </article>`;
+        </article>
+      `
+    )
+    .join("");
 
-      postsContainer.insertAdjacentHTML("beforeend", postHTML);
-    });
+const renderRecentPosts = (posts) => {
+  return `
+    <img
+      src="./assets/vector/vector2.png"
+      alt=""
+      class="posts-vector top-left"
+    />
+    <img
+      src="./assets/vector/vector2.0.png"
+      alt=""
+      class="posts-vector top-right"
+    />
+
+    <div class="recent-posts-header">
+      <h2>Recent Posts</h2>
+      <div class="divider z-10"></div>
+    </div>
+
+    <div class="posts-container">
+      <div class="posts-grid">
+        ${createCards(posts)}
+      </div>
+    </div>
+  `;
+};
+
+// Main function
+export const loadRecentPosts = async () => {
+  const recentPostsSection = document.getElementById("recent-posts");
+
+  if (!recentPostsSection) {
+    console.error("Error: Hindi mahanap ang section na may id='recent-posts'");
+    return;
   }
 
-  renderPosts(recentPostsData);
-});
+  try {
+    const response = await fetch(DATA_URL);
+
+    if (!response.ok) {
+      throw new Error("Failed to load JSON file");
+    }
+
+    const data = await response.json();
+    recentPostsSection.innerHTML = renderRecentPosts(data);
+
+  } catch (error) {
+    console.warn("JSON fetch failed. Using fallback data to prevent blank screen:", error);
+    recentPostsSection.innerHTML = renderRecentPosts(fallbackPosts);
+  }
+};
+
+// Automatic execution
+loadRecentPosts();
