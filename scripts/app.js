@@ -1,10 +1,14 @@
 // app.js
-import { loadContactSection } from "./src/js/sections/contact.js";
+import { loadAbout } from "./about.js";
+import { loadTeam } from "./team.js";
 import { loadRecentPosts } from "./recent-posts.js";
+import { loadContact } from "./contact.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadContactSection();
+  loadAbout();
+  loadTeam();
   loadRecentPosts();
+  loadContact();
 
   const track = document.getElementById("carousel-track");
   const wrapper = document.querySelector(".carousel-wrapper");
@@ -95,4 +99,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     calculateWidths();
   });
-});s
+});

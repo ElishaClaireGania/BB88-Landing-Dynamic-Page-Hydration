@@ -80,4 +80,4 @@ export const loadRecentPosts = async () => {
 };
 
 // Automatic execution
-loadRecentPosts();
+// loadRecentPosts();

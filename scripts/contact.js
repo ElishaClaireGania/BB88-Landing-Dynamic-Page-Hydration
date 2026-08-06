@@ -102,4 +102,4 @@ export const loadContact = async () => {
   }
 };
 
-loadContact();
+// loadContact();
