@@ -3,6 +3,7 @@ const DATA_URL = "./src/data/portfolio.json";
 document.addEventListener("DOMContentLoaded", () => {
   const projectGrid = document.getElementById("projects-grid");
   const filterButtons = document.querySelectorAll(".filter-btn");
+  let portfolioCards = [];
 
   if (!projectGrid) {
     console.error(
@@ -11,9 +12,25 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Fetch portfolio data
+  async function fetchPortfolioData() {
+    try {
+      const response = await fetch(DATA_URL);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      portfolioCards = data;
+      return data;
+    } catch (error) {
+      console.error("Error loading portfolio data:", error);
+    }
+  }
+
   // Rendering of Cards
   function displayCards(filterCategory) {
-    // Clears the container completely
     projectGrid.innerHTML = "";
 
     const filteredCards = portfolioCards.filter((card) => {
@@ -59,6 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Initial render initialization
-  displayCards("All");
+  async function init() {
+    const data = await fetchPortfolioData();
+
+    displayCards("All");
+  }
+
+  init();
 });

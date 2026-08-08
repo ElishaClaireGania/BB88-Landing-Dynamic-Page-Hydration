@@ -1,0 +1,35 @@
+{
+  "services": {
+    "title": "Design and Marketing Solutions",
+    "icons": [
+      {
+        "image": "assets/icon/icon design ideas.png",
+        "label": "Design Ideas"
+      },
+      {
+        "image": "assets/icon/icon Digital & Mainstream.png",
+        "label": "Digital & Mainstream Marketing"
+      },
+      {
+        "image": "assets/icon/icon Brand & Identity.png",
+        "label": "Brand & Identity"
+      },
+      {
+        "image": "assets/icon/icon Digital Solutions.png",
+        "label": "Digital Solutions"
+      }
+    ]
+  },
+
+  "about": {
+    "title": "About Us",
+    "subtitle": "Creative Solutions for Impactful Brand Communication",
+    "paragraphs": [
+      "BB 88 Advertising & Digital Solutions Inc. is a \"One-Stop\" shop for design and communication strategy, specializing in graphic design, architectural design, realistic visual production, web app and mobile application. Our focus is on creating the best design to effectively sell your products and services through high impact visual mediums. We can help turn your ideas and creative perspective into a successful communication strategy.",
+
+      "Our philosophy is based on our passion to deliver the RIGHT message at the RIGHT time with the RIGHT solution. With a combined team of dedicated professionals from varied creative industries & powered by \"State of the Art\" equipment, we do our work best with the clients to integrate branding and marketing strategy. BB 88 support team innovates unique identity of products and services that would enable our customers to establish presence in their target market.",
+
+      "At BB 88 Advertising & Digital Solutions Inc., we believe that our ability to focus on our customers needs and target audience sets us apart in the industry. Our distinctive design concepts and production approach, combined with expert technical support, allow us to cover all aspects of mass communication, including print video radio, and the internet. Our group of companies are ready to provide you with the support you need to succeed in today's rapidly-evolving landscape."
+    ]
+  }
+}
