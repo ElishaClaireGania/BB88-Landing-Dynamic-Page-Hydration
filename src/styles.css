@@ -184,7 +184,7 @@ nav {
 
 .about-vector-overlay {
   @apply absolute pointer-events-none z-1;
-  right: clamp(-200px, -10vw, -100px);
+  right: clamp(-210px, -10vw, -220px);
   bottom: clamp(940px, 85vh, 940px);
   width: clamp(300px, 55%, 750px);
   max-width: 750px;

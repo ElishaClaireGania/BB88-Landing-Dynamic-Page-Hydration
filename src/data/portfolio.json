@@ -1,0 +1,56 @@
+[
+  {
+    "image": "./assets/picture/pic1.png",
+    "title": "BC Bagsakan Pickup",
+    "description": "Your dependable partner in farm-to-market local logistics",
+    "category": "Mobile App"
+  },
+  {
+    "image": "./assets/picture/pic2.png",
+    "title": "Bio-MOBAPP",
+    "description": "Access agricultural biodata and systems right from your pocket",
+    "category": "Mobile App"
+  },
+  {
+    "image": "./assets/picture/pic3.png",
+    "title": "BC Bagsakan Delivery",
+    "description": "Direct tracking and seamless distribution logistics systems",
+    "category": "Mobile App"
+  },
+  {
+    "image": "./assets/picture/pic4.png",
+    "title": "Biorganism",
+    "description": "Katulong mo sa pagsasaka",
+    "category": "Mobile App"
+  },
+  {
+    "image": "./assets/picture/pic5.png",
+    "title": "EM & A Architectural",
+    "description": "Corporate identity and professional branding materials",
+    "category": "Brand & Design"
+  },
+  {
+    "image": "./assets/picture/pic6.png",
+    "title": "Greenhouse Paradise",
+    "description": "Branding concept and structural marketing documentation",
+    "category": "Brand & Design"
+  },
+  {
+    "image": "./assets/picture/pic7.png",
+    "title": "MHR",
+    "description": "Professional business stationery design and visual concepts",
+    "category": "Brand & Design"
+  },
+  {
+    "image": "./assets/picture/pic8.png",
+    "title": "Migs",
+    "description": "Complete localized system identity and design services",
+    "category": "Brand & Design"
+  },
+  {
+    "image": "./assets/picture/pic9.png",
+    "title": "Filipino Land",
+    "description": "Official identity and digital solution styling properties",
+    "category": "Brand & Design"
+  }
+]

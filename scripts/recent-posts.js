@@ -1,33 +1,11 @@
-const recentPostsData = [
-  {
-    image: "./assets/picture/picture1.png",
-    category: "Politics",
-    title: "E-Commerce's Impact on Marketing:",
-    description: "Harnessing Online Channels to Boost Sales and Reach New Customers",
-    link: "#"
-  },
-  {
-    image: "./assets/picture/picture2.png",
-    category: "Sports",
-    title: "The Rise of Mobile Marketing:",
-    description: "Creating Mobile-Optimized Campaigns to Reach Customers on-the-go",
-    link: "#"
-  },
-  {
-    image: "./assets/picture/picture3.png",
-    category: "Entertainment",
-    title: "The Rise of Mobile Marketing:",
-    description: "Creating Mobile-Optimized Campaigns to Reach Customers on-the-go",
-    link: "#"
-  }
-];
+const DATA_URL = "./src/data/recent-posts.json";
 
 document.addEventListener("DOMContentLoaded", () => {
   const postsContainer = document.querySelector(".posts-grid");
 
   if (!postsContainer) {
     console.error(
-      "Error: Could not find the posts grid element (.posts-grid) in the DOM."
+      "Error: Could not find the posts grid element (.posts-grid) in the DOM.",
     );
     return;
   }
@@ -56,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="post-description">
                 ${post.description}
               </p>
-              <a href="${post.link || '#'}" class="btn-read-more">
+              <a href="${post.link || "#"}" class="btn-read-more">
                 Read More <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
